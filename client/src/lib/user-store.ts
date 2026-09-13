@@ -41,7 +41,7 @@ export const getActiveUserEmail = (): string => {
   try {
     const directEmail = localStorage.getItem("fittrack_user_email");
     if (directEmail && directEmail.trim()) return directEmail.toLowerCase().trim();
-    const runtimeUser = localStorage.getItem("manus-runtime-user-info");
+    const runtimeUser = localStorage.getItem("fittrack-runtime-user-info");
     if (runtimeUser) {
       const parsed = JSON.parse(runtimeUser);
       if (parsed?.email && typeof parsed.email === "string") return parsed.email.toLowerCase().trim();

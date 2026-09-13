@@ -101,6 +101,17 @@ FitTrack adheres strictly to data security best practices:
 
 ---
 
+## 🙏 Acknowledgements & Open-Source Credits
+
+FitTrack integrates and builds upon these open-source libraries and resources:
+- **[react-native-body-highlighter](https://github.com/HichamELBSI/react-native-body-highlighter)** by ELABBASSI Hicham (MIT License) — Vector SVG paths for human body anatomy and muscle highlighting.
+- **[shadcn/ui](https://ui.shadcn.com/)** & **[Radix UI](https://www.radix-ui.com/)** — Accessible, composable UI component primitives.
+- **[Leaflet](https://leafletjs.com/)** & **[OpenStreetMap](https://www.openstreetmap.org/)** — Interactive mapping and outdoor GPS route telemetry.
+- **[Three.js](https://threejs.org/)** & **[@react-three/fiber](https://docs.pmnd.rs/react-three-fiber)** — 3D visualization and WebGL rendering.
+- **[Lucide React](https://lucide.dev/)** — Icon library.
+
+---
+
 ## 📄 License
 
 Distributed under the **MIT License**. See `LICENSE` for more information.

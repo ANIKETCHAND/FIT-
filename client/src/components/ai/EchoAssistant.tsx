@@ -378,7 +378,7 @@ Ask me **anything** using text or the 🎙️ **Voice Command** button!`,
         <span className="echo-mascot-tooltip">Ask Rexi AI (Voice & Chat)</span>
       </button>
 
-      {/* ChatGPT / Gemini Style AI Assistant Chat Dialog */}
+      {/* Rexi AI Assistant Chat Dialog */}
       {isOpen && (
         <aside className="echo-chat-dialog" aria-label="Rexi AI Chat Assistant">
           {/* Header */}

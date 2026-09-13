@@ -710,7 +710,7 @@ var SDKServer = class {
     return new TextEncoder().encode(secret);
   }
   /**
-   * Create a session token for a Manus user openId
+   * Create a session token for an authenticated user openId
    * @example
    * const sessionToken = await sdk.createSessionToken(userInfo.openId);
    */
@@ -836,7 +836,7 @@ function buildCronUser(userInfo) {
   return {
     id: -1,
     openId: userInfo.openId,
-    name: userInfo.name || "Manus Scheduled Task",
+    name: userInfo.name || "FitTrack Scheduled Task",
     email: null,
     loginMethod: null,
     role: "user",

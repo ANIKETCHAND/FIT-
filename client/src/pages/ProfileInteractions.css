@@ -1,0 +1,371 @@
+/* Kinetic Anatomy Lab profile interactions: editable human identity and simulated device controls */
+.profile-avatar {
+  overflow: hidden;
+}
+.profile-avatar img {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile-orb.has-photo {
+  padding: 0;
+  overflow: hidden;
+  background: var(--card);
+}
+.profile-orb.has-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-edit-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 5px;
+  padding: 0;
+  border: 0;
+  color: #38bdf8;
+  background: transparent;
+  font: 700 7px "Space Mono", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.profile-edit-action:hover {
+  color: #0ea5e9;
+}
+.profile-range-control {
+  padding-right: 6px;
+}
+.profile-range-control select {
+  appearance: none;
+  min-width: 111px;
+  border: 0;
+  outline: 0;
+  color: var(--card-foreground);
+  background: transparent;
+  font: 700 8px "Space Mono", monospace;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.profile-range-control select option {
+  color: var(--card-foreground);
+  background: var(--card);
+}
+.profile-dialog {
+  max-width: 600px !important;
+  color: var(--card-foreground) !important;
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  box-shadow: var(--card-shadow) !important;
+}
+.profile-dialog:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 86px;
+  height: 2px;
+  background: #38bdf8;
+}
+.profile-dialog [data-slot="dialog-title"] {
+  margin-top: 4px;
+  color: var(--card-foreground);
+  font: 700 28px / 0.92 "Space Grotesk", sans-serif;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.profile-dialog [data-slot="dialog-description"] {
+  max-width: 410px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.profile-dialog [data-slot="dialog-close"] {
+  color: var(--card-foreground);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.profile-form {
+  display: grid;
+  gap: 17px;
+  margin-top: 4px;
+}
+.profile-photo-upload {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 64px;
+  padding: 8px 10px;
+  cursor: pointer;
+  background: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+}
+.profile-photo-preview {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  overflow: hidden;
+  color: #0a192f;
+  background: #38bdf8;
+  font: 700 16px "Space Grotesk", sans-serif;
+}
+.profile-photo-preview.has-photo {
+  background: var(--card);
+}
+.profile-photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-photo-upload > span:nth-child(2) {
+  display: grid;
+  gap: 4px;
+}
+.profile-photo-upload b {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--card-foreground);
+  font: 700 9px "Space Mono", monospace;
+  text-transform: uppercase;
+}
+.profile-photo-upload b svg {
+  color: #38bdf8;
+}
+.profile-photo-upload small {
+  color: var(--muted-foreground);
+  font: 7px "Space Mono", monospace;
+  text-transform: uppercase;
+}
+.profile-photo-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+.profile-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+.profile-form-grid label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted-foreground);
+  font: 700 7px "Space Mono", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.profile-form-grid input {
+  width: 100%;
+  height: 35px;
+  padding: 0 9px;
+  outline: 0;
+  color: var(--card-foreground);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font: 12px "Plus Jakarta Sans", sans-serif;
+}
+.profile-form-grid input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+.profile-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.profile-dialog-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  color: var(--card-foreground);
+  background: var(--card);
+  border-radius: 4px;
+  font: 700 8px "Space Mono", monospace;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.profile-dialog-actions button[type="submit"] {
+  color: #0a192f;
+  background: #38bdf8;
+  border-color: #38bdf8;
+}
+.profile-dialog-actions button[type="submit"]:hover {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+}
+.profile-dialog-actions button:active,
+.device-choice:active {
+  transform: scale(0.97);
+}
+.device-dialog {
+  max-width: 540px !important;
+}
+.device-chooser {
+  display: grid;
+  gap: 8px;
+  margin-top: 3px;
+}
+.device-choice {
+  display: grid;
+  grid-template-columns: 39px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 9px;
+  color: var(--card-foreground);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+}
+.device-choice:hover:not(:disabled) {
+  border-color: #38bdf8;
+}
+.device-choice:disabled {
+  opacity: 0.72;
+  cursor: wait;
+}
+.device-choice-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  color: #0a192f;
+  background: #38bdf8;
+  border: 1px solid #38bdf8;
+}
+.device-choice > span:nth-child(2) {
+  display: grid;
+  gap: 4px;
+}
+.device-choice b {
+  color: var(--card-foreground);
+  font-size: 12px;
+}
+.device-choice small {
+  color: var(--muted-foreground);
+  font: 7px "Space Mono", monospace;
+  text-transform: uppercase;
+}
+.device-connect {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #38bdf8;
+  font: 700 8px "Space Mono", monospace;
+  text-transform: uppercase;
+}
+.device-loader {
+  color: #38bdf8;
+  animation: profile-device-spin 0.8s linear infinite;
+}
+.device-empty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 74px;
+  padding: 13px;
+  color: var(--muted-foreground);
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.device-empty p {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+@keyframes profile-device-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .device-loader {
+    animation: none;
+  }
+}
+@media (max-width: 800px) {
+  .profile-edit-action {
+    position: absolute;
+    right: 0;
+    bottom: -18px;
+  }
+  .identity-athlete {
+    padding-bottom: 10px;
+  }
+  .profile-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-dialog {
+    max-width: calc(100% - 24px) !important;
+    padding: 18px !important;
+  }
+  .profile-dialog [data-slot="dialog-title"] {
+    font-size: 25px;
+  }
+  .profile-range-control select {
+    min-width: 105px;
+    font-size: 7px;
+  }
+  .device-choice {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+  .device-connect,
+  .device-loader {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .profile-photo-upload {
+    align-items: flex-start;
+  }
+  .profile-dialog-actions {
+    justify-content: stretch;
+  }
+  .profile-dialog-actions button {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+.profile-edit-box-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #38bdf8;
+  background: #38bdf8;
+  color: #0a192f;
+  font: 700 9px "Space Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.profile-edit-box-btn:hover {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+  transform: translateY(-1px);
+}
+.profile-edit-box-btn:active {
+  transform: scale(0.96);
+}

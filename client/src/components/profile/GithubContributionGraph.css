@@ -1,0 +1,305 @@
+/* Theme-aligned Contribution Heatmap styling */
+.gh-contribution-section {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+  margin: 16px 0 20px;
+}
+
+.gh-contribution-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.gh-contribution-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  padding: 0 2px;
+}
+
+.gh-contribution-title {
+  color: var(--card-foreground);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-family: "Space Grotesk", sans-serif, -apple-system, sans-serif;
+}
+
+.gh-contribution-settings-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #38bdf8;
+  border: 1px solid #38bdf8;
+  color: #0a192f;
+  font-size: 8.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 5px 11px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  font-family: "Space Mono", monospace;
+}
+
+.gh-contribution-settings-btn:hover {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+}
+
+.gh-contribution-box {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 20px 16px;
+  box-shadow: var(--card-shadow);
+  overflow-x: auto;
+}
+
+.gh-contribution-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 72px;
+  height: 2px;
+  background: #38bdf8;
+}
+
+.gh-svg-scroll-container {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.gh-heatmap-svg {
+  display: block;
+  min-width: 710px;
+}
+
+.gh-svg-month-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  fill: var(--muted-foreground);
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0.04em;
+}
+
+.gh-svg-day-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  fill: var(--muted-foreground);
+  font-family: "Space Mono", monospace;
+}
+
+.gh-svg-cell {
+  cursor: pointer;
+  transition: opacity 0.15s ease, filter 0.15s ease;
+}
+
+.gh-svg-cell:hover {
+  filter: brightness(1.2);
+  stroke: #38bdf8;
+  stroke-width: 1px;
+}
+
+.gh-svg-cell.cell-future {
+  opacity: 0.22;
+  cursor: default;
+}
+.gh-svg-cell.cell-future:hover {
+  filter: none;
+  stroke: var(--border);
+}
+
+/* Monochromatic Sky Blue SVG Colors */
+.gh-svg-cell.level-0 {
+  fill: var(--muted);
+  stroke: var(--border);
+  stroke-width: 0.8px;
+}
+
+.gh-svg-cell.level-1 {
+  fill: rgba(56, 189, 248, 0.25);
+  stroke: rgba(56, 189, 248, 0.4);
+  stroke-width: 0.9px;
+}
+
+.gh-svg-cell.level-2 {
+  fill: rgba(56, 189, 248, 0.5);
+  stroke: rgba(56, 189, 248, 0.6);
+  stroke-width: 0.9px;
+}
+
+.gh-svg-cell.level-3 {
+  fill: rgba(56, 189, 248, 0.75);
+  stroke: rgba(56, 189, 248, 0.85);
+  stroke-width: 0.9px;
+}
+
+.gh-svg-cell.level-4 {
+  fill: #38bdf8;
+  filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.85));
+}
+
+.gh-legend-cell.level-0 {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.gh-legend-cell.level-1 {
+  background-color: rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.gh-legend-cell.level-2 {
+  background-color: rgba(56, 189, 248, 0.5);
+  border: 1px solid rgba(56, 189, 248, 0.6);
+}
+
+.gh-legend-cell.level-3 {
+  background-color: rgba(56, 189, 248, 0.75);
+  border: 1px solid rgba(56, 189, 248, 0.85);
+}
+
+.gh-cell.level-4,
+.gh-legend-cell.level-4 {
+  background-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.75);
+}
+
+.gh-contribution-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.gh-learn-more {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  text-decoration: none;
+  font-family: "Plus Jakarta Sans", sans-serif, -apple-system, sans-serif;
+  transition: color 0.15s ease;
+}
+
+.gh-learn-more:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.gh-legend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.gh-legend-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin: 0 3px;
+  font-family: "Space Mono", monospace;
+}
+
+.gh-legend-cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/* Right Year Nav Buttons */
+.gh-years-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 29px;
+  flex-shrink: 0;
+}
+
+.gh-year-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 78px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: var(--card);
+  color: var(--card-foreground);
+  transition: all 0.15s ease;
+  font-family: "Space Mono", monospace;
+}
+
+.gh-year-btn:hover:not(.active) {
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+.gh-year-btn.active {
+  background: #38bdf8;
+  color: #0a192f;
+  border-color: #38bdf8;
+}
+
+/* Telemetry Tooltip */
+.gh-tooltip {
+  position: fixed;
+  transform: translate(-50%, -100%);
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid #38bdf8;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: var(--card-shadow);
+  font-family: "Space Mono", monospace;
+}
+
+@media (max-width: 1000px) {
+  .gh-contribution-section {
+    flex-direction: column;
+  }
+  .gh-years-nav {
+    flex-direction: row;
+    padding-top: 0;
+    width: 100%;
+  }
+  .gh-year-btn {
+    flex: 1;
+  }
+}
+
+/* Dark (espresso) theme: the contribution title sits on the dark page surface
+   (needs light text), while the footer link sits on the beige card (needs a
+   readable dark-blue). Light/navy theme is unaffected. */
+.dark .gh-contribution-title { color: #efe4d2; }
+.dark .gh-learn-link { color: #0284c7; }
+/* Light (navy) theme: the title sits on the dark navy surface (needs light text),
+   the footer link on a white card (needs a readable dark-blue). */
+:root:not(.dark) .gh-contribution-title { color: #eaf1f8; }
+:root:not(.dark) .gh-learn-link { color: #0284c7; }
